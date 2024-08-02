@@ -12,8 +12,8 @@ function App() {
   const [vitorias_jogador, setVitorias_jogador] = useState(0);
   const [vitorias_computador, setVitorias_computador] = useState(0);
 
-  const rejogar = () => {
-    setFim(false);
+  const rejogar = (value) => {
+    setFim(value);
     setResultado('');
   };
 
@@ -77,6 +77,7 @@ function App() {
       </div>
       <h1>Pedra, Papel, Tesoura</h1>
       <h1>{resultado}</h1>
+      <h1>Seu placar: {vitorias_jogador}</h1>
       {!fim && <button onClick={() => jogar(0)}>Pedra</button>}
       {!fim && <button onClick={() => jogar(1)}>Papel</button>}
       {!fim && <button onClick={() => jogar(2)}>Tesoura</button>}
@@ -86,7 +87,7 @@ function App() {
       <Play_Again rejogar={rejogar}/>
       
       <br /><br />
-      <End_Game jogador={vitorias_jogador} maquina={vitorias_computador} />
+      <End_Game rejogar={rejogar} jogador={vitorias_jogador} maquina={vitorias_computador} />
     </>
   )
 }
