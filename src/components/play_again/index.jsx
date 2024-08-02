@@ -2,7 +2,7 @@ import React from 'react'
 
 function Play_Again({rejogar}) {
     const play = () => {
-        rejogar();
+        rejogar(false);
       };
 
 
