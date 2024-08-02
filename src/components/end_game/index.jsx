@@ -1,13 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
 
-function End_Game(resultados) {
+function End_Game({ rejogar, jogador, maquina }) {
     
     const [resultado, setResultado] = useState([]);
 
     function mostraResultado() {
-        setResultado(prevItems => [...prevItems, 'Você ganhou: ' + resultados.jogador]);
-        setResultado(prevItems => [...prevItems, 'A maquina ganhou: ' + resultados.maquina]);
+      rejogar(true);
+      setResultado(prevItems => [...prevItems, 'Você ganhou: ' + jogador]);
+      setResultado(prevItems => [...prevItems, 'A maquina ganhou: ' + maquina]);
     }
 
   return (
